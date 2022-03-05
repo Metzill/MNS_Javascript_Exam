@@ -26,7 +26,7 @@ fetch(url, options)
       myLink.innerText = 'Description';
 
       let myDelete = document.createElement('a');
-      myDelete.href = '../delete#' + element.id;
+      myDelete.href = '../delete/' + element.id;
       myDelete.innerText = 'Suppression';
 
       myTitle.innerText = element.name;

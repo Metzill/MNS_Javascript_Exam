@@ -1,6 +1,6 @@
 const path = require('path');
 let app = require('express')();
-const Data = require('./data/data');
+let Data = require('./data/data');
 
 app.listen(5000, () => {
     console.log('Server launch on port : 5000');
@@ -34,11 +34,9 @@ app.get('/data/:id', (req, res) => {
     });
 });
 
+//Make the delete a button and not an href to make this route app.delete and not app.get
 app.get('/delete/:id', (req, res) => {
-    let myId = req.params.id;
-    Data.forEach(element => {
-        if(element.id == myId) {
-            console.log(Data);
-        }
-    });
+    const myId = req.params.id;
+    Data = Data.filter(element => element.id != myId);
+    res.redirect('/pages/liste.html');
 });

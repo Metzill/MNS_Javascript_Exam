@@ -15,16 +15,19 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/client/index.html');
 });
 
-app.get('/data', (req, res) => {
-    res.send(Data);
-});
-
+//Create
 app.post('/data', (req, res) => {
     Data.push(req.body);
     res.send(Data);
     console.log(req.body);
-})
+});
 
+//GetAll
+app.get('/data', (req, res) => {
+    res.send(Data);
+});
+
+//GetOne
 app.get('/data/:id', (req, res) => {
     let myId = req.params.id;
     Data.forEach(element => {
@@ -34,8 +37,9 @@ app.get('/data/:id', (req, res) => {
     });
 });
 
-//Make the delete a button and not an href to make this route app.delete and not app.get
-app.get('/delete/:id', (req, res) => {
+//ToDo make this route app.delete and not app.get
+//Delete
+app.delete('/delete/:id', (req, res) => {
     const myId = req.params.id;
     Data = Data.filter(element => element.id != myId);
     res.redirect('/pages/liste.html');

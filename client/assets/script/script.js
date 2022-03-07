@@ -21,13 +21,34 @@ fetch(url, options)
       let mySouls = document.createElement('div');
       let myTitle = document.createElement('h2');
 
-      let myLink = document.createElement('a');
-      myLink.href = './game.html#' + element.id;
+      let myLink = document.createElement('button');
       myLink.innerText = 'Description';
+      myLink.onclick = () => {
+          location.assign('./game.html#' + element.id);
+      }
 
-      let myDelete = document.createElement('a');
-      myDelete.href = '../delete/' + element.id;
+      let myDelete = document.createElement('button');
       myDelete.innerText = 'Suppression';
+      myDelete.onclick = () => {
+          // location.assign('../delete/' + element.id);
+        let urlDelete = '../delete/' + element.id;
+        let optionsDelete = {
+          method: 'DELETE',
+          headers: {'Accept': 'application/json',
+                    'Content-Type': 'application/json'},
+          mode: 'cors',
+          cache: 'default'
+      };
+        fetch(urlDelete, optionsDelete)
+            .then((res) => {
+              if(res.ok) {
+                return res.json();
+              }
+            })
+            .then((response) => {
+              console.log(response);
+            });
+    }
 
       myTitle.innerText = element.name;
 
@@ -38,3 +59,8 @@ fetch(url, options)
       mySouls.appendChild(myDelete);
     });
   });
+
+  let btnNew = document.querySelector('#btnNew');
+  btnNew.addEventListener('click', () => {
+    location.assign('./add.html');
+});

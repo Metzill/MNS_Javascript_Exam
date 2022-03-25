@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title id="title">Modifier</title>
+</head>
+<body>
+    <div id="app">
+        <div class="min-h-screen h-full bg-gray-100 flex flex-col">
+          <nav class="bg-gray-800">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+              <div class="relative flex items-center justify-between h-16">
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                  <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                      <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-gray-200">Description</h1>
+                      <p class="font-medium leading-tight text-5xl mt-0 mb-2 text-gray-200"> | </p>
+                      <a class="font-medium leading-tight text-5xl mt-0 mb-2 text-gray-200" href="./liste.html">Retour à la liste</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="container mx-auto flex flex-col items-center py-12 sm:py-24 bg-neutral-400">
+            <div class="flex justify-right items-right">
+                <div id="content">
+        
+                    <button id="btnModify">Modifier</button>
+                    <br>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="newName">Nouveau nom du jeu :</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="name">
+                    <br>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="currDesc">Nouvelle Description du jeu :</label>
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="desc"></textarea>
+                    <br>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" id="currName">Nom actuel du jeu :</label>
+                    <br>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" id="currDesc">Description acutelle du jeu :</label>
+                </div>
+          </div>
+          <div class="flex-1" />
+          <div class="bg-gray-800">
+            <footer class="flex flex-wrap items-center justify-between p-3 m-auto">
+              <div class="container mx-auto flex flex-col flex-wrap items-center justify-between">
+                <div class="flex mx-auto text-white text-center">
+                  Copyright MNS © 2022
+                </div>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    
+    <script src="../assets/script/script_update.js"></script>
+</body>
+</html>

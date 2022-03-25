@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 
 //Create
 app.post('/data', (req, res) => {
+    console.log('mabite');
     Data.push(req.body);
     res.send(Data);
     console.log(req.body);
@@ -37,10 +38,21 @@ app.get('/data/:id', (req, res) => {
     });
 });
 
-//ToDo make this route app.delete and not app.get
 //Delete
 app.delete('/delete/:id', (req, res) => {
     const myId = req.params.id;
     Data = Data.filter(element => element.id != myId);
+    res.sendStatus(200);
     res.redirect('/pages/liste.html');
+});
+
+//Update
+app.put('/data', (req, res) => {
+    console.log("app.put reached")
+    // let myId = req.params.id;
+    // Data.forEach(element => {
+    //     if(element.id == myId) {
+    //         res.send(element);
+    //     }
+    // });
 });

@@ -22,7 +22,9 @@ fetch(url, options)
     pageTitle.innerText = `${response.name}`;
     let mySouls = document.createElement('div');
     let myTitle = document.createElement('h1');
+    myTitle.classList.add('font-medium', 'leading-tight', 'text-4xl', 'mt-0', 'mb-2', 'text-blue-600');
     let myDesc = document.createElement('p');
+    myDesc.classList.add('font-medium', 'leading-tight', 'text-4xl', 'mt-0', 'mb-2', 'text-slate-600');
     myTitle.innerText =  `${response.name}`;
     myDesc.innerText = `${response.desc}`;
 
